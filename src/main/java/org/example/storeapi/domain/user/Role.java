@@ -6,7 +6,6 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-
 @Getter
 @Setter
 @AllArgsConstructor
@@ -19,6 +18,8 @@ public class Role {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private String id;
 
-    private String permission;
+    private String name;
+
+    private String description;
 
 }
