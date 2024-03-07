@@ -28,6 +28,7 @@ public class SecurityConfigurations {
         return httpSecurity.csrf(filter -> filter.disable())
                 .sessionManagement(sm -> sm.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .authorizeHttpRequests(req -> req.requestMatchers(HttpMethod.POST, "/login").permitAll()
+                        .requestMatchers(HttpMethod.POST, "/cadastro").permitAll()
                         .anyRequest().authenticated()
                 )
                 .addFilterBefore(securityFilterLogin, UsernamePasswordAuthenticationFilter.class)
